@@ -1,4 +1,4 @@
-require_relative 'arbol'
+require_relative 'trees'
 
 a = ArbolBinario.new(1,ArbolBinario.new(12,ArbolBinario.new(10,ArbolBinario.new(9)),ArbolBinario.new(0)),ArbolBinario.new(7,ArbolBinario.new(2)))
 c = lambda {|x| x.valor>1}
