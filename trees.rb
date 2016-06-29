@@ -5,9 +5,11 @@
 # Autores : Jonnathan Ng
 #           Joel Rivas
 require_relative 'mod_bfs'
+require_relative 'mod_fold'
 
 class ArbolBinario
     include BFS
+    include Fold
     attr_accessor :valor
     def initialize(valor, izq=nil, der=nil)
         @valor = valor
@@ -31,6 +33,7 @@ end
 
 class ArbolRosa
     include BFS
+    include Fold
     attr_accessor :valor
     def initialize(valor, *hijos)
         @valor = valor

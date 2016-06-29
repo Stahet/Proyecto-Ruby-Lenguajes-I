@@ -1,3 +1,11 @@
+# nodos.rb
+#
+# Archivo donde se definen los diferentes tipos de mutadores
+# ademas se extienden las clases Fixnum, String y Array
+# 
+# Autores : Jonnathan Ng
+#           Joel Rivas
+
 class Mutador
 
 end
@@ -29,19 +37,19 @@ class Oscuro
     end
 end
 
-class NodoNum < Fixnum
+class Fixnum
     def mutar(mutador)
         mutador.mutar_fixnum(self)
     end
 end
 
-class NodoString < String
+class String
     def mutar(mutador)
         mutador.mutar_string(self)
     end
 end
 
-class NodoArray < Array
+class Array
     def mutar(mutador)
         mutador.mutar_array(self)
     end
