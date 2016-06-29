@@ -13,7 +13,7 @@ module BFS
 
     def recoger(pred)
         nodos = []
-        bfs {|x| nodos.push(x) if pred.call(x) }
+        bfs {|x| nodos.push(x) if pred.call(x)}
         return nodos
     end
 end
@@ -41,7 +41,21 @@ class ArbolBinario
 
 end
 
-a = ArbolBinario.new(1,ArbolBinario.new(12,ArbolBinario.new(10,ArbolBinario.new(9)),ArbolBinario.new(0)),ArbolBinario.new(7,ArbolBinario.new(2)))
-c = lambda {|x| x.valor>1}
-nodos = a.recoger(c)
-puts nodos
+class ArbolRosa
+    include BFS
+    attr_accessor :valor
+    def initialize(valor, *hijos)
+        @valor = valor
+        @hijos = hijos
+    end
+
+    def each
+        @hijos.each do |i|
+            yield i
+        end
+    end
+
+    def to_s
+        "Nodo: #{@valor}"
+    end
+end
