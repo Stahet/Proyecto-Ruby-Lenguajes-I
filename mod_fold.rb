@@ -1,6 +1,6 @@
 # mod_fold.rb
 # 
-# Modulo que implementa el metodo fold, que utiliza un recorrido en bfs
+# Modulo que implementa el metodo fold, que utiliza un recorrido en dfs
 #
 module Fold
 	def dfs
