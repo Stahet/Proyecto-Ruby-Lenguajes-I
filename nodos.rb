@@ -26,6 +26,7 @@ class Singular
         newStr
     end
     def mutar_array(arr)
+        arr.join(" ")
     end
 end
 
