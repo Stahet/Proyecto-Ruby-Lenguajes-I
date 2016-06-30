@@ -3,16 +3,19 @@
 if __FILE__ == $0
 	
 	def hola
-		singular= "singular"
 		newStr= ''
-		"hegllo".each_char do |c| 
-			if singular[c]==nil
-				newStr+=c 
-			else 
-				newStr+= c.upcase
+		it= 1
+		auxPar=''
+		auxImpar=''
+		"bRyu".each_char do |c| 
+			if (it % 2) == 0
+			    auxPar+=  c 
+			else
+			    auxImpar+=  c 
 			end
+			it+=1
 		end
-		newStr
+		newStr=auxPar+auxImpar
 	end
 
 	puts hola
