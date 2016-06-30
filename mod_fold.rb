@@ -4,9 +4,16 @@
 #
 module Fold
 	def dfs
-		self.each do |i|
-			i.dfs
-		end
-		yield self.valor
+		pila = []
+		pila.push(self)
+		while not pila.empty?
+			nodo = pila.pop
+			yield nodo
+			hijos = []
+            nodo.each do |i|
+                hijos.unshift(i) # Metemos en una cola para preservar orden dfs
+            end
+            pila.concat(hijos) # Empilamos los hijos
+        end
 	end
 end
