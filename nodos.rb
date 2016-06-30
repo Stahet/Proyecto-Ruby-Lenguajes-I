@@ -69,6 +69,9 @@ class Oscuro
         newStr=auxPar+auxImpar
     end
     def mutar_array(arr)
+        mitad= array.length / 2
+        arrayAux=array.sort_by{rand}
+        arrayAux[0..mitad-1]
     end
 end
 
