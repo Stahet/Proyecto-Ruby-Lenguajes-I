@@ -7,12 +7,26 @@
 #           Joel Rivas
 
 class Mutador
-
+    def mutar_fixnum(num);end
+    def mutar_string(str);end
+    def mutar_array(str);end
 end
 
-class Singular
+class Singular < Mutador
     def mutar_fixnum(num)
+        if num < 10
+            return num
+        end
+        ult = num % 10
+        num = num / 10
+        suma = 0
+        while num > 0
+            suma = suma + num % 10
+            num = num / 10
+        end
+        return ult*suma
     end
+
     def mutar_string(str)
         singular= "singular"
         newStr= ''
@@ -25,14 +39,27 @@ class Singular
         end
         newStr
     end
+
     def mutar_array(arr)
         arr.join(" ")
     end
 end
 
-class Uniforme
+class Uniforme < Mutador
     def mutar_fixnum(num)
+        if num < 10
+            return num
+        end
+        suma = 0
+        n = 0
+        while num > 0
+            suma = suma + num % 10
+            num = num / 10
+            n = n + 1
+        end
+        return suma/n
     end
+
     def mutar_string(str)
         newStr= ''
         it= 1
@@ -46,13 +73,30 @@ class Uniforme
         end
         newStr
     end
+
     def mutar_array(arr)
     end
 end
 
-class Oscuro
+class Oscuro < Mutador
     def mutar_fixnum(num)
+        if num < 10
+            return num
+        end
+        suma = 0
+        pos = 0
+        pot = 0
+        while num > 0
+            if pos.even?
+                suma = suma + (num % 10)*(10**(pot))
+                pot = pot + 1
+            end
+            pos = pos + 1
+            num = num/10
+        end
+        return suma
     end
+
     def mutar_string(str)
         newStr= ''
         auxPar=''
@@ -68,6 +112,7 @@ class Oscuro
         end
         newStr=auxPar+auxImpar
     end
+
     def mutar_array(arr)
         mitad= array.length / 2
         arrayAux=array.sort_by{rand}
