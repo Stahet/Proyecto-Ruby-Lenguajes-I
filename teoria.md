@@ -1,6 +1,6 @@
 # Estudiantes
 ### 11-10199 - Jonnathan Ng
-### 11-10369 - Joel Rivas
+### 11-10866 - Joel Rivas
 
 [comment]: # "Si el grupo es de un solo integrante, elimine la linea anterior"
 ---

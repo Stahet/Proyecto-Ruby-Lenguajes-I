@@ -14,6 +14,16 @@ class Singular
     def mutar_fixnum(num)
     end
     def mutar_string(str)
+        singular= "singular"
+        newStr= ''
+        str.each_char do |c| 
+            if singular[c]==nil
+                newStr+=c 
+            else 
+                newStr+= c.upcase
+            end
+        end
+        newStr
     end
     def mutar_array(arr)
     end
