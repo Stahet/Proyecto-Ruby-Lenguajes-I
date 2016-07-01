@@ -11,4 +11,7 @@ if __FILE__ == $0
 
 	puts hola
 
+	a ="asdf"
+	a=a.chars.map { |ch| ch.upcase }
+	puts a
 end

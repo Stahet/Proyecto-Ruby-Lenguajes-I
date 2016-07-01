@@ -26,7 +26,9 @@ puts a.mutar_fixnum(100) == 0
 puts a.mutar_fixnum(101) == 1
 puts a.mutar_fixnum(875) == 75
 puts a.mutar_fixnum(0) == 0
-puts
+puts a.mutar_array([1,2,3,4])
+puts a.mutar_string("Ruby")
+puts a
 puts "FixNum Uniforme"
 a = Uniforme
 puts a.mutar_fixnum(487) == 6
@@ -39,6 +41,8 @@ puts a.mutar_fixnum(100) == 0
 puts a.mutar_fixnum(101) == 0
 puts a.mutar_fixnum(875) == 6
 puts a.mutar_fixnum(0) == 0
+puts a.mutar_array([487,1,10,875])
+puts a.mutar_string("Ruby")
 puts
 puts "FixNum Oscuro"
 a = Oscuro
@@ -53,3 +57,5 @@ puts a.mutar_fixnum(101) == 11
 puts a.mutar_fixnum(875) == 85
 puts a.mutar_fixnum(0) == 0
 puts a.mutar_fixnum(68456) == 646
+puts a.mutar_array([487,11,101,875])
+puts a.mutar_string("Ruby")
