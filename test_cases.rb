@@ -48,11 +48,12 @@ arbol_b_1.bfs { |x| puts x.valor }
 
 #arbol_b_1.fold(0) { |x,acc| x.valor + acc }
 # 55
-
-arbol_b_1.recoger(lambda { |x| x.valor.even? })
+puts
+puts "recoger"
+puts arbol_b_1.recoger(lambda { |x| x.valor.even? })
 # [arbol_b_2,arbol_b_4,arbol_b_6,arbol_b_8,arbol_b_10]
 
-arbol_b_2.bfs { |x| x.mutar(Oscuro); puts x.valor }
+arbol_b_2.dfs { |x| x.mutar(Oscuro); puts x.valor }
 
 arbol_b_3.dfs { |x| x.mutar(Singular); puts x.valor }
 # Quien descifre el patrón de primero, tiene puntos extra. Piense bien, solo
@@ -72,8 +73,8 @@ arbol_r_1 = ArbolRosa.new("animal",
 p = arbol_r_1.valor.each_char.to_a.permutation.map &:join
 
 block = Proc.new do |x|
-    (p.map { |w| w.include? x.valor }).inject(false) { |x,acc| a || acc}
+    (p.map { |w| w.include? x.valor }).inject(false) { |x,acc| x || acc}
 end
 
-arbol_r_1.recoger(block)
+puts arbol_r_1.recoger(block)
 # [arbol_r_1, arbol_r_lana, arbol_r_lima, arbol_r_lamina, arbol_r_ala, arbol_r_mani]

@@ -3,6 +3,8 @@
 # Archivo donde se definen los diferentes tipos de mutadores
 # ademas se extienden las clases Fixnum, String y Array
 # 
+# Se utilza el patron de despacho doble
+#
 # Autores : Jonnathan Ng
 #           Joel Rivas
 
@@ -117,11 +119,12 @@ class Oscuro < Mutador
     def self.mutar_array(arr)
         size= arr.length
         mitad= arr.length/2
-        it=0
-        while it < mitad
-            numAleatorio=rand(size)
-            arr[numAleatorio]=arr[numAleatorio].mutar(Oscuro)
-            it+=1
+        listaRand = [*0..size-1].shuffle # Generamos lista aleatoria con numeros unicos
+        i = 0
+        while i < mitad
+            pos = listaRand.pop
+            arr[pos] = arr[pos].mutar(Oscuro)
+            i+=1
         end 
         arr
     end
