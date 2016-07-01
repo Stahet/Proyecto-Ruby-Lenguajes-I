@@ -1,6 +1,9 @@
 # trees.rb
 #
 # Definición de Árboles
+#
+# Cada Arbol incorpora 2 Modulos, para operaciones utilizando el algoritmo de
+# DFS y BFS respectivamente
 # 
 # Autores : Jonnathan Ng
 #           Joel Rivas

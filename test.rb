@@ -20,14 +20,17 @@ r = ArbolRosa.new(1,ArbolRosa.new(2,ArbolRosa.new(3),ArbolRosa.new(4),ArbolRosa.
 puts "recoger pares Rosa"
 par = lambda {|x| x.valor.even?}
 puts r.recoger(par)
+
+puts
 puts "DFS Rosa"
 r.dfs {|x| puts x}
 
 puts
 puts "Fold"
 puts r.fold(0) { |x,acc| x.valor + acc } == 29
+puts
 
-puts "FixNum Singular"
+puts "Singular"
 a = Singular
 puts a.mutar_fixnum(487) == 84
 puts a.mutar_fixnum(1) == 1
@@ -40,10 +43,13 @@ puts a.mutar_fixnum(875) == 75
 puts a.mutar_fixnum(0) == 0
 puts a.mutar_array([1,2,3,4]) == "1 2 3 4"
 puts a.mutar_array([[1],[[4]],1]) == "1 4 1"
-puts a.mutar_string("Ruby")
-puts a
-puts "FixNum Uniforme"
+puts a.mutar_array([["hola"],[["que",["tal"]]],["como"],["estas"]]) == "hola que tal como estas"
+puts a.mutar_string("Ruby") == "RUby"
+puts a.mutar_string("singular") == "SINGULAR"
+puts a.mutar_string("s") == "S"
 puts
+
+puts "Uniforme"
 a = Uniforme
 puts a.mutar_fixnum(487) == 6
 puts a.mutar_fixnum(1) == 1
@@ -56,10 +62,15 @@ puts a.mutar_fixnum(101) == 0
 puts a.mutar_fixnum(875) == 6
 puts a.mutar_fixnum(0) == 0
 puts a.mutar_array([15]) == [3]
-puts a.mutar_array([487,1,10,875])
-puts a.mutar_string("Ruby")
+puts a.mutar_array([9]) == [9]
+puts a.mutar_array([487,1,10,875]) == [6,1,0,6]
+puts a.mutar_string("Ruby") == "RuBy"
+puts a.mutar_string("Ru") == "Ru"
+puts a.mutar_string("aaa") == "AaA"
+puts a.mutar_string("m") == "M"
+
 puts
-puts "FixNum Oscuro"
+puts "Oscuro"
 a = Oscuro
 puts a.mutar_fixnum(487) == 47
 puts a.mutar_fixnum(1) == 1

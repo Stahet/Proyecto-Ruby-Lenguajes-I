@@ -23,5 +23,4 @@ module Fold
 		dfs {|x| acum = yield x,acum}
 		acum
 	end
-
 end
