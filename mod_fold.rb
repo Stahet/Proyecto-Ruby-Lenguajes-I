@@ -2,6 +2,8 @@
 # 
 # Modulo que implementa el metodo fold, que utiliza un recorrido en dfs
 #
+# Autores : Jonnathan Ng
+#           Joel Rivas
 module Fold
 	def dfs
 		pila = []
@@ -15,6 +17,11 @@ module Fold
             end
             pila.concat(hijos) # Empilamos los hijos
         end
+	end
+
+	def fold(acum)
+		dfs {|x| acum = yield x,acum}
+		acum
 	end
 
 end

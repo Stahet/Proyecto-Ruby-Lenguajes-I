@@ -21,7 +21,11 @@ puts "recoger pares Rosa"
 par = lambda {|x| x.valor.even?}
 puts r.recoger(par)
 puts "DFS Rosa"
-a.dfs {|x| puts x}
+r.dfs {|x| puts x}
+
+puts
+puts "Fold"
+puts r.fold(0) { |x,acc| x.valor + acc } == 29
 
 puts "FixNum Singular"
 a = Singular
@@ -68,6 +72,8 @@ puts a.mutar_fixnum(101) == 11
 puts a.mutar_fixnum(875) == 85
 puts a.mutar_fixnum(0) == 0
 puts a.mutar_fixnum(68456) == 646
-puts a.mutar_array([1]) == [1]
+puts a.mutar_array([25]) == [25]
 puts a.mutar_array([487,11,101,875])
 puts a.mutar_string("Ruby")
+
+

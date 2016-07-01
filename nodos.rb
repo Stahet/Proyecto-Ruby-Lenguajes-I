@@ -97,7 +97,7 @@ class Oscuro < Mutador
             pos = pos + 1
             num = num/10
         end
-        return suma
+        suma
     end
 
     def self.mutar_string(str)

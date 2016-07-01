@@ -30,7 +30,7 @@ class ArbolBinario
     end
 
     def to_s
-        "Nodo: #{@valor}"
+        "arbol_b_#{@valor}"
     end
 
 end
@@ -55,6 +55,6 @@ class ArbolRosa
     end
 
     def to_s
-        "Nodo: #{@valor}"
+        "arbol_r_#{@valor}"
     end
 end

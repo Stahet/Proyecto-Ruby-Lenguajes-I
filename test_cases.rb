@@ -46,7 +46,7 @@ arbol_b_1.bfs { |x| puts x.valor }
 # 9
 # 10
 
-#arbol_b_1.fold(0) { |x,acc| x.valor + acc }
+puts arbol_b_1.fold(0) { |x,acc| x.valor + acc } == 55
 # 55
 puts
 puts "recoger"
