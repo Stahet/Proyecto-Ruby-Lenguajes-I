@@ -25,6 +25,10 @@ class ArbolBinario
         end
     end
 
+    def mutar(mutador)
+        @valor = @valor.mutar(mutador)
+    end
+
     def to_s
         "Nodo: #{@valor}"
     end
@@ -44,6 +48,10 @@ class ArbolRosa
         @hijos.each do |i|
             yield i
         end
+    end
+
+    def mutar(mutador)
+        @valor = @valor.mutar(mutador)
     end
 
     def to_s

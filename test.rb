@@ -16,7 +16,7 @@ puts "DFS Rosa"
 a.dfs {|x| puts x}
 
 puts "FixNum Singular"
-a = Singular.new
+a = Singular
 puts a.mutar_fixnum(487) == 84
 puts a.mutar_fixnum(1) == 1
 puts a.mutar_fixnum(10) == 0
@@ -28,7 +28,7 @@ puts a.mutar_fixnum(875) == 75
 puts a.mutar_fixnum(0) == 0
 puts
 puts "FixNum Uniforme"
-a = Uniforme.new
+a = Uniforme
 puts a.mutar_fixnum(487) == 6
 puts a.mutar_fixnum(1) == 1
 puts a.mutar_fixnum(10) == 0
@@ -41,7 +41,7 @@ puts a.mutar_fixnum(875) == 6
 puts a.mutar_fixnum(0) == 0
 puts
 puts "FixNum Oscuro"
-a = Oscuro.new
+a = Oscuro
 puts a.mutar_fixnum(487) == 47
 puts a.mutar_fixnum(1) == 1
 puts a.mutar_fixnum(10) == 0

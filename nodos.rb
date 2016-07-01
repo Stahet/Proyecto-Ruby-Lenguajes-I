@@ -13,7 +13,7 @@ class Mutador
 end
 
 class Singular < Mutador
-    def mutar_fixnum(num)
+    def self.mutar_fixnum(num)
         if num < 10
             return num
         end
@@ -27,7 +27,7 @@ class Singular < Mutador
         return ult*suma
     end
 
-    def mutar_string(str)
+    def self.mutar_string(str)
         singular= "singular"
         newStr= ''
         str.each_char do |c| 
@@ -40,13 +40,13 @@ class Singular < Mutador
         newStr
     end
 
-    def mutar_array(arr)
+    def self.mutar_array(arr)
         arr.join(" ")
     end
 end
 
 class Uniforme < Mutador
-    def mutar_fixnum(num)
+    def self.mutar_fixnum(num)
         if num < 10
             return num
         end
@@ -60,7 +60,7 @@ class Uniforme < Mutador
         return suma/n
     end
 
-    def mutar_string(str)
+    def self.mutar_string(str)
         newStr= ''
         it= 1
         str.each_char do |c| 
@@ -74,12 +74,12 @@ class Uniforme < Mutador
         newStr
     end
 
-    def mutar_array(arr)
+    def self.mutar_array(arr)
     end
 end
 
 class Oscuro < Mutador
-    def mutar_fixnum(num)
+    def self.mutar_fixnum(num)
         if num < 10
             return num
         end
@@ -97,7 +97,7 @@ class Oscuro < Mutador
         return suma
     end
 
-    def mutar_string(str)
+    def self.mutar_string(str)
         newStr= ''
         auxPar=''
         auxImpar=''
@@ -113,7 +113,7 @@ class Oscuro < Mutador
         newStr=auxPar+auxImpar
     end
 
-    def mutar_array(arr)
+    def self.mutar_array(arr)
         mitad= array.length / 2
         arrayAux=array.sort_by{rand}
         arrayAux[0..mitad-1]
