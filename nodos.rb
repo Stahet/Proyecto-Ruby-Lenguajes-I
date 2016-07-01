@@ -75,7 +75,7 @@ class Uniforme < Mutador
     end
 
     def self.mutar_array(arr)
-        arr=arr.map {|e| e.mutar(Uniforme.new)}
+        arr=arr.map {|e| e.mutar(Uniforme)}
     end
 end
 
@@ -120,8 +120,7 @@ class Oscuro < Mutador
         it=0
         while it < mitad
             numAleatorio=rand(size)
-            
-            arr[numAleatorio]=arr[numAleatorio].mutar(Oscuro.new)
+            arr[numAleatorio]=arr[numAleatorio].mutar(Oscuro)
             it+=1
         end 
         arr
