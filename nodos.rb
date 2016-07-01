@@ -41,7 +41,7 @@ class Singular < Mutador
     end
 
     def mutar_array(arr)
-        arr.join(" ")
+        arr=arr.join(" ")
     end
 end
 
@@ -75,6 +75,7 @@ class Uniforme < Mutador
     end
 
     def mutar_array(arr)
+        arr=arr.map {|e| e.mutar(Uniforme.new)}
     end
 end
 
@@ -114,9 +115,16 @@ class Oscuro < Mutador
     end
 
     def mutar_array(arr)
-        mitad= array.length / 2
-        arrayAux=array.sort_by{rand}
-        arrayAux[0..mitad-1]
+        size= arr.length
+        mitad= arr.length/2
+        it=0
+        while it < mitad
+            numAleatorio=rand(size)
+            
+            arr[numAleatorio]=arr[numAleatorio].mutar(Oscuro.new)
+            it+=1
+        end 
+        arr
     end
 end
 
